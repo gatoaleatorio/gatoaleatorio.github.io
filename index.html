@@ -15,14 +15,43 @@
 
         body {
             background-color: #f0f0f0;
+            color: #333;
         }
 
-        /* Cabeçalho */
+        /* Cabeçalho com imagem de fundo */
         header {
-            background: linear-gradient(90deg, #2D5C8A, #1E3A5A);
+            background: url('https://i.imgur.com/7QZQZQZ.jpg') no-repeat center center/cover;
             color: white;
-            padding: 2rem;
+            padding: 4rem 2rem;
             text-align: center;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin-top: 1rem;
+        }
+
+        /* Botão de destaque */
+        .btn {
+            background: #00FF88;
+            color: #000;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 2rem;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(0, 255, 136, 0.3);
         }
 
         /* Seção de serviços */
@@ -38,44 +67,71 @@
             padding: 1.5rem;
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
         }
 
-        /* Formulário de contato */
-        .contato {
+        .card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .card h3 {
+            margin: 1rem 0;
+        }
+
+        /* Seção "Sobre Nós" */
+        .sobre {
             background: #1E3A5A;
             color: white;
             padding: 2rem;
             text-align: center;
         }
 
-        form {
-            max-width: 500px;
-            margin: 0 auto;
+        .sobre h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
         }
 
-        input, textarea {
-            width: 100%;
-            padding: 0.8rem;
-            margin: 0.5rem 0;
-            border: none;
-            border-radius: 5px;
+        /* Depoimentos */
+        .depoimentos {
+            padding: 2rem;
+            background: #f9f9f9;
+            text-align: center;
         }
 
-        button {
-            background: #00FF88;
-            color: #000;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
+        .depoimento {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin: 1rem 0;
+        }
+
+        .depoimento p {
+            font-style: italic;
+        }
+
+        .depoimento span {
+            display: block;
+            margin-top: 1rem;
             font-weight: bold;
         }
 
-        /* Responsividade */
-        @media (max-width: 768px) {
-            .servicos {
-                grid-template-columns: 1fr;
-            }
+        /* Rodapé */
+        footer {
+            background: #333;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        footer a {
+            color: #00FF88;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -83,31 +139,46 @@
     <header>
         <h1>🖨️ Impressões 3D Sob Demanda</h1>
         <p>Transforme seus projetos em realidade!</p>
+        <button class="btn" onclick="alert('Vamos começar sua encomenda!')">Faça seu pedido</button>
     </header>
 
     <section class="servicos">
         <div class="card">
-            <h2>Peças Técnicas</h2>
+            <img src="https://i.imgur.com/9GjZY9d.png" alt="Peças Técnicas">
+            <h3>Peças Técnicas</h3>
             <p>Adaptadores, engrenagens e componentes personalizados para empresas.</p>
         </div>
         <div class="card">
-            <h2>Projetos Criativos</h2>
+            <img src="https://i.imgur.com/4z7WX9L.png" alt="Projetos Criativos">
+            <h3>Projetos Criativos</h3>
             <p>Figuras, protótipos e peças artísticas em alta resolução.</p>
         </div>
         <div class="card">
-            <h2>Materiais</h2>
+            <img src="https://i.imgur.com/5wXjR7V.png" alt="Materiais">
+            <h3>Materiais</h3>
             <p>PLA, ABS, PETG e mais. Cores variadas!</p>
         </div>
     </section>
 
-    <section class="contato">
-        <h2>Faça seu pedido</h2>
-        <form action="https://formspree.io/f/mvojnzqw" method="POST">
-            <input type="text" name="nome" placeholder="Seu nome" required>
-            <input type="email" name="email" placeholder="Seu e-mail" required>
-            <textarea name="mensagem" placeholder="Descreva sua encomenda (ex: material, quantidade, prazo)" rows="4" required></textarea>
-            <button type="submit">Enviar Pedido</button>
-        </form>
+    <section class="sobre">
+        <h2>Sobre Nós</h2>
+        <p>Somos especialistas em impressão 3D, oferecendo soluções personalizadas para empresas e criativos. Trabalhamos com os melhores materiais e tecnologias para garantir qualidade e precisão.</p>
     </section>
+
+    <section class="depoimentos">
+        <h2>Depoimentos</h2>
+        <div class="depoimento">
+            <p>"Ótimo serviço! As peças chegaram no prazo e com alta qualidade."</p>
+            <span>— João, Técnico de TI</span>
+        </div>
+        <div class="depoimento">
+            <p>"Adorei a atenção aos detalhes. Recomendo!"</p>
+            <span>— Maria, Designer</span>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2023 Impressões 3D. Desenvolvido com ❤️ por <a href="https://github.com/gatoaleatorio" target="_blank">gatoaleatorio</a>.</p>
+    </footer>
 </body>
 </html>
