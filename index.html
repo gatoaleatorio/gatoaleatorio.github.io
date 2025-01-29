@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impressões 3D Personalizadas</title>
+    <style>
+        /* Estilos gerais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #f0f0f0;
+        }
+
+        /* Cabeçalho */
+        header {
+            background: linear-gradient(90deg, #2D5C8A, #1E3A5A);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        /* Seção de serviços */
+        .servicos {
+            padding: 2rem;
+            display: grid;
+            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        }
+
+        .card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        /* Formulário de contato */
+        .contato {
+            background: #1E3A5A;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        form {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 0.8rem;
+            margin: 0.5rem 0;
+            border: none;
+            border-radius: 5px;
+        }
+
+        button {
+            background: #00FF88;
+            color: #000;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .servicos {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🖨️ Impressões 3D Sob Demanda</h1>
+        <p>Transforme seus projetos em realidade!</p>
+    </header>
+
+    <section class="servicos">
+        <div class="card">
+            <h2>Peças Técnicas</h2>
+            <p>Adaptadores, engrenagens e componentes personalizados para empresas.</p>
+        </div>
+        <div class="card">
+            <h2>Projetos Criativos</h2>
+            <p>Figuras, protótipos e peças artísticas em alta resolução.</p>
+        </div>
+        <div class="card">
+            <h2>Materiais</h2>
+            <p>PLA, ABS, PETG e mais. Cores variadas!</p>
+        </div>
+    </section>
+
+    <section class="contato">
+        <h2>Faça seu pedido</h2>
+        <form action="https://formspree.io/f/mvojnzqw" method="POST">
+            <input type="text" name="nome" placeholder="Seu nome" required>
+            <input type="email" name="email" placeholder="Seu e-mail" required>
+            <textarea name="mensagem" placeholder="Descreva sua encomenda (ex: material, quantidade, prazo)" rows="4" required></textarea>
+            <button type="submit">Enviar Pedido</button>
+        </form>
+    </section>
+</body>
+</html>
